@@ -9,7 +9,10 @@
      */
     class Home {
         public static function getHome() {
-            return View::render('pages/home');
+            return View::render('pages/home', [
+                "name" => "Roger Rodrigues | Satulg",
+                "description" => "Olá mundo!"
+            ]);
         }
     }
 ?>

@@ -6,13 +6,19 @@
          * Método responsável por retornar uma view renderizada
          *
          * @param string $view
+         * @param array $vars (strings, numerics)
          * @return string
          */
-        public static function render($view) {
+        public static function render($view, $vars = []) {
             //Conteudo da view
             $contentView = self::getContentView($view);
 
-            return $contentView;
+            $keys = array_keys($vars);
+            $keys = array_map(function($item){
+                return '{{'. $item .'}}';
+            }, $keys);
+
+            return str_replace($keys, array_values($vars), $contentView);
         }
 
         /**
