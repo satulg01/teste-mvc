@@ -11,6 +11,7 @@
 	session_start();
 
 	exit;
+
 	/*
 	$obRouter 	= new Router(URL);
 	$connection = new Connection("localhost", "servidor", "root", "");
@@ -73,51 +74,6 @@
 				print_r($links);
 				exit();
 
-				if (isset($_SESSION["UsuarioID"])){
-					if(isset($_GET["open"]) && isset($_GET["acao"])){
-						if($_GET["open"] == "1" && $_GET["acao"] == "ger") {
-							require("combustivel/ger.php");
-							$pagina = "Combustível";
-						}
-
-						if($_GET["open"] == "1" && $_GET["acao"] == "add") {
-							require("combustivel/add.php");
-							$pagina = "Combustível";
-						}
-
-						if($_GET["open"] == "2" && $_GET["acao"] == "ger") {
-							require("chat/ger.php");
-							$pagina = "Chat";
-						}
-					} else {
-						if(isset($_GET["site"])) {
-							require("site/main.php");
-							$pagina = "Site";
-						}else{
-								//HOME DO SISTEMA
-							echo '
-								<div  id="container">
-									<div href="?open=1&acao=add" class="menu-item" >
-										<i class="fas fa-plus"></i>
-										<p>Abastecimento</p>
-									</div>
-									<div href="?open=1&acao=ger" class="menu-item">
-										<i class="fas fa-eye"></i>
-										<p>Abastecimento</p>
-									</div>
-									<div href="?open=2&acao=ger" class="menu-item">
-										<i class="fas fa-comments"></i>
-										<p>Chat</p>
-									</div>
-
-								</div>				
-							';
-						}
-					}
-				} else {
-					require("login/index.php");
-					$pagina = "Login";
-				}
 			?>
 		</div>
 	</body>
