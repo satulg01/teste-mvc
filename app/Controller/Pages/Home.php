@@ -7,12 +7,14 @@
      * Método responsável por retornar o conteudo da nossa home
      * @return string
      */
-    class Home {
+    class Home extends Page{
         public static function getHome() {
-            return View::render('pages/home', [
+            $content = View::render('pages/home', [
                 "name" => "Roger Rodrigues | Satulg",
                 "description" => "Olá mundo!"
             ]);
+
+            return self::getPage("Home Satulg", $content);
         }
     }
 ?>
