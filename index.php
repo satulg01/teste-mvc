@@ -1,16 +1,22 @@
 <?php
-	require("./vendor/autoload.php");
+	require __DIR__ . "/vendor/autoload.php";
 
 	define("URL", "http://localhost");
 
-	use \App\Http\Router;
+	use \App\Controller\Pages\Home;
+	// use \App\Http\Router;
+
+	echo Home::getHome();
 
 	session_start();
 
+	exit;
+	/*
 	$obRouter 	= new Router(URL);
 	$connection = new Connection("localhost", "servidor", "root", "");
 	$db 		= $connection->returnConnection();
 	$relation 	= new Relation($db);
+	*/
 
 ?>
 <html>

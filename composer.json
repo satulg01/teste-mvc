@@ -2,7 +2,7 @@
     "name": "satulg/teste-mvc",
     "autoload": {
         "psr-4": {
-            "Satulg\\TesteMvc\\": "src/"
+            "App\\": "app/"
         }
     },
     "authors": [
