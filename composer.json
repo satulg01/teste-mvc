@@ -1,0 +1,14 @@
+{
+    "name": "satulg/teste-mvc",
+    "autoload": {
+        "psr-4": {
+            "Satulg\\TesteMvc\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Roger Rodrigues de Oliveira"
+        }
+    ],
+    "require": {}
+}
