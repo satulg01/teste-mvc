@@ -3,6 +3,19 @@
 
     class View {
         /**
+         * Variáveis padrões
+         */
+        private static $vars;
+
+        /**
+         * Método 'construtor' da classe
+         * @param array $vars
+         * @return void
+         */
+        public static function init ($vars = []) {
+            self::$vars = $vars;
+        }
+        /**
          * Método responsável por retornar uma view renderizada
          *
          * @param string $view
@@ -12,6 +25,8 @@
         public static function render($view, $vars = []) {
             //Conteudo da view
             $contentView = self::getContentView($view);
+
+            $vars = array_merge(self::$vars, $vars);
 
             $keys = array_keys($vars);
             $keys = array_map(function($item){
