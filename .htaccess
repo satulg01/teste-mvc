@@ -1,0 +1,16 @@
+
+#Bloquear listagem
+Options -Indexes
+
+Options +FollowSymLinks
+RewriteEngine on
+
+DefaultLanguage pt-BR
+AddDefaultCharset UTF-8
+
+DirectoryIndex index.php
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]

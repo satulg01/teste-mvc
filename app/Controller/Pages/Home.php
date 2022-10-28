@@ -2,6 +2,7 @@
     namespace App\Controller\Pages;
 
 	use \App\Utils\View\View;
+	use \App\Model\Entity\Organization;
 
     /**
      * Método responsável por retornar o conteudo da nossa home
@@ -9,12 +10,13 @@
      */
     class Home extends Page{
         public static function getHome() {
+            $obOrganization = new Organization;
+
             $content = View::render('pages/home', [
-                "name" => "Roger Rodrigues | Satulg",
-                "description" => "Olá mundo!"
+                "name" => $obOrganization->name
             ]);
 
-            return self::getPage("Home Satulg", $content);
+            return self::getPage("Satulg > Home", $content);
         }
     }
 ?>
