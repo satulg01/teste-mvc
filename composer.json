@@ -10,5 +10,7 @@
             "name": "Roger Rodrigues de Oliveira"
         }
     ],
-    "require": {}
+    "require": {
+        "william-costa/dot-env": "^0.1.0"
+    }
 }

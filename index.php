@@ -3,8 +3,11 @@
 
 	use \App\Http\Router;
 	use \App\Utils\View\View;
+	use \WilliamCosta\DotEnv\Environment;
 
-	define("URL", "http://localhost/teste-mvc");
+	Environment::load(__DIR__);
+
+	define("URL", getenv("URL"));
 
 	#Define o valor padrão das variáveis
 	View::init([
